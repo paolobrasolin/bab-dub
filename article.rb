@@ -93,13 +93,15 @@ begin
 
   # Extract and format title.
   title = I18n.transliterate result.scan(/%T (.*)/).first.first
-  safe_title = title.downcase.gsub(/[^A-Za-z0-9 ]/, '').gsub(/\s+/, '_')
+  safe_title = title.downcase.gsub(/[^A-Za-z0-9 ]/, ' ').strip.gsub(/\s+/, '_')
 
   # Extract and format authors.
   authors = result.scan(/%A (.*),/).map(&:first).map { |a| I18n.transliterate a }
   safe_authors = authors.uniq.join('_').upcase
 
   # Format new filename.
+  puts safe_authors
+  puts safe_title
   safe_filename = "#{safe_title}_#{safe_authors}.pdf"
   puts "New filename:\n  " + safe_filename
 

@@ -1,0 +1,3 @@
+[submodule "scholar.py"]
+	path = scholar.py
+	url = https://github.com/ckreibich/scholar.py.git

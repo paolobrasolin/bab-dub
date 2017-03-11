@@ -85,23 +85,16 @@ begin
   # extracted_text = stdout.gsub(/\n+/, "\n")
 
   # Check whether there actually is text.
-  raise "There is no text to fetch, bub." if extracted_text.empty?
+  # raise "There is no text to fetch, bub." if extracted_text.empty?
 
-  # Search and fetch some kind of header on first page.
-  # if (/abstract/i).match(extracted_text)
-  #   # Get everything before abstract.
-  #   header = extracted_text.split(/abstract/i).first
-  # elsif (/@/).match(extracted_text)
-  #   # Cut everything after last email.
-  #   header = extracted_text.rpartition(/@\S+/).first(2).join
-  # else
 
-  puts "Head of first page:"
-  header = extracted_text.lines
-  header = select_lines(lines: header).join
-  # header = header.join
 
-  # end
+  lines_range = RangePrompt.new(
+    question: "Input lines, bub: ".blue,
+    lead: '0..1'
+  ).ask
+
+  header = lines[lines_range].join
 
   # Prepare search string from matched header.
   search_string = header.gsub(/\s+/, ' ').strip
@@ -111,8 +104,6 @@ begin
     lead: search_string,
     regexp: //
   ).ask
-
-  exit
 
   # Use scholar.py to fetch the best (first) match.
   result, stderr, status = Open3.capture3(

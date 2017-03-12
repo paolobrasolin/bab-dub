@@ -4,7 +4,11 @@ require 'colorize'
 require 'highline/import'
 require 'open3'
 require 'fileutils'
-require 'pdf-reader'
+
+require 'progress_bar'
+# class Array
+#   include ProgressBar::WithProgress
+# end
 
 require 'open3'
 
@@ -12,6 +16,7 @@ require "i18n"
 I18n.config.available_locales = :en
 
 require './prompt'
+require './extract'
 
 def apply_range_list(ranges:, iterable:)
   selection = []
@@ -40,35 +45,59 @@ def select_lines(
   apply_range_list(ranges: ranges, iterable: lines)
 end
 
-begin
+
+def check_filename(filename)
   # Get filename and check existence.
-  filename = ARGV[0]
   raise 'I need a filename, bub.' if filename.nil?
   raise 'File does not exist, bub.' unless File.exist? filename
 
   # Clean filename and show it.
-  filename = File.absolute_path ARGV[0]
-  puts "File found:\n  #{filename}"
+  filepath = File.absolute_path ARGV[0]
+  puts 'File found: '.green + filepath.to_s.blue
 
-  # Select the page range for extraction.
-  page_range = QualifiedRangePrompt.new(
-    question: "Input a page range for extraction: ".blue,
+  # Return full checked path.
+  filepath
+end
+
+begin
+  filename = check_filename ARGV[0]
+
+  extraction_ranges = QualifiedRangePrompt.new(
+    question: "Input extraction ranges: ".blue,
     lead: '0[0..9]'
   ).ask
 
-  # puts page_range.inspect.yellow
+  page_set = []
+  extraction_ranges.each { |s| page_set.concat s[:pages].to_a }
+  page_set.sort!.uniq!
 
+  content = extract_txt filename: filename, pageset: page_set
 
-  # Read file and get text from first page removing empty lines.
-  reader = PDF::Reader.new filename
-  txt = reader.pages[2..4]
+  content_is_empty = content.join.gsub(/[[:space:]]/, '').empty?
 
-  # puts txt.inspect
+  if content_is_empty
+    puts "No text found!".red
+    should_try_ocr = BoolPrompt.new(
+      question: "This might be a scan. Should I try with OCR? ".blue,
+      lead: 'y'
+    ).ask
+  else
+    puts "Text extracted!".green
+  end
+
+  if should_try_ocr
+    content = extract_ocr filename: filename, pageset: page_set
+    content_is_empty = content.join.gsub(/[[:space:]]/, '').empty?
+    raise "Still no text found! Aborting the mission.".red if content_is_empty
+    puts "Text extracted!".green
+  end
+
+  # At this point either we have aborted or we have content.
 
   lines = []
-  page_range.each do |spec|
-    reader.pages[spec[:pages]].each do |page|
-      lines.concat page.text.gsub(/\n+/,"\n").lines[spec[:lines]]
+  extraction_ranges.each do |spec|
+    content[spec[:pages]].each do |page|
+      lines.concat page.lines[spec[:lines]]
     end
   end
 
@@ -77,24 +106,17 @@ begin
     puts "#{line_number}: ".green + line.rstrip.blue
   end
 
-  # exit
-  # stdout, stderr, status = Open3.capture3(
-  #   'pdftotext', '-f', page_range.first.to_s, '-l', page_range.last.to_s, filename, '-'
-  # )
-  # raise "There was an error parsing the PDF, bub." unless status.success?
-  # extracted_text = stdout.gsub(/\n+/, "\n")
-
-  # Check whether there actually is text.
-  # raise "There is no text to fetch, bub." if extracted_text.empty?
-
-
-
-  lines_range = RangePrompt.new(
+  lines_ranges = UnqualifiedRangePrompt.new(
     question: "Input lines, bub: ".blue,
     lead: '0..1'
   ).ask
 
-  header = lines[lines_range].join
+  q_lines = []
+  lines_ranges.each do |range|
+    q_lines << lines[range]
+  end
+
+  header = q_lines.join
 
   # Prepare search string from matched header.
   search_string = header.gsub(/\s+/, ' ').strip
@@ -114,7 +136,7 @@ begin
     "--all=\"#{search_string}\""
   )
   raise stderr unless status.success?
-  puts "Best result:\n  " + result.gsub(/\n/, "\n  ").strip
+  puts "Best Google Scholar result:\n  " + result.gsub(/\n/, "\n  ").strip
 
   # Extract and format title.
   title = I18n.transliterate result.scan(/%T (.*)/).first.first
@@ -150,6 +172,4 @@ rescue StandardError => error
   puts error.to_s.red
   exit
 end
-
-
 

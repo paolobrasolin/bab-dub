@@ -41,10 +41,29 @@ class Prompt
   end
 end
 
+class BoolPrompt < Prompt
+  def initialize(
+    question: 'Should I? '.blue,
+    lead: '',
+    regexp: /^\s*(y(?:es)?|n(?:o)?)\s*$/i
+  )
+    super
+  end
+
+  def parsed
+    if @input =~ /y(es)?/i
+      true
+    elsif @input =~ /n(o)?/i
+      false
+    else
+      raise 'There definitely is a bug, bub.'
+    end
+  end
+end
 
 class RangesPrompt < Prompt
   def initialize(
-    question: 'Input a list of ranges: '.blue,
+    question: 'Input extraction ranges: '.blue,
     lead: '0..1',
     regexp: /^\s*(\d+\.\.\d+|\d+)(\s*,\s*(\d+\.\.\d+|\d+))*\s*$/
   )
@@ -64,26 +83,6 @@ class RangesPrompt < Prompt
   end
 end
 
-
-class RangePrompt < Prompt
-  def initialize(
-    question: 'Input a list of ranges: '.blue,
-    lead: '0..1',
-    regexp: /^\s*(\d+\.\.\d+|\d+)\s*$/
-  )
-    super
-  end
-
-  def parsed
-    if @input =~ /\d+\.\.\d+/
-      Range.new(*@input.split('..').map(&:to_i))
-    elsif @input =~ /\d+/
-      Range.new @input.to_i, @input.to_i
-    else
-      raise 'There definitely is a bug, bub.'
-    end
-  end
-end
 
 class QualifiedRangePrompt < Prompt
   N = /-?\d+/
@@ -114,6 +113,40 @@ class QualifiedRangePrompt < Prompt
       end
     end
     pages
+  end
+
+  private
+
+    def spec_to_range(spec)
+      if spec =~ /^(#{N})\.\.(#{N})$/
+        extrema = $~.captures
+      elsif spec =~ /^(#{N})$/
+        extrema = $~.captures*2
+      end
+      Range.new(*extrema.map(&:to_i))
+    end
+end
+
+class UnqualifiedRangePrompt < Prompt
+  N = /-?\d+/
+  R = /#{N}\.\.#{N}/
+  M = /#{R}|#{N}/ # order is important
+  L = /#{M}(?:,#{M})*/
+
+  def initialize(
+    question: 'Input a list of ranges: '.blue,
+    lead: '0..1',
+    regexp: /^#{L}$/
+  )
+    super
+  end
+
+  def parsed
+    line_ranges = []
+    @input.scan(M).each do |spec|
+        line_ranges << spec_to_range(spec)
+    end
+    line_ranges
   end
 
   private

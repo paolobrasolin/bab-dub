@@ -90,6 +90,9 @@ begin
     content_is_empty = content.join.gsub(/[[:space:]]/, '').empty?
     raise "Still no text found! Aborting the mission.".red if content_is_empty
     puts "Text extracted!".green
+  else
+    puts "Ok bub. Bye!".green
+    exit
   end
 
   # At this point either we have aborted or we have content.
@@ -136,33 +139,56 @@ begin
     "--all=\"#{search_string}\""
   )
   raise stderr unless status.success?
-  puts "Best Google Scholar result:\n  " + result.gsub(/\n/, "\n  ").strip
+  query_result = result.strip
 
-  # Extract and format title.
-  title = I18n.transliterate result.scan(/%T (.*)/).first.first
-  safe_title = title.downcase.gsub(/[^A-Za-z0-9 ]/, ' ').strip.gsub(/\s+/, '_')
+  if query_result.empty?
+    puts "No result!".red
+    should_rename_file = BoolPrompt.new(
+      question: "Wanna rename the file manually? ".blue,
+      lead: 'n'
+    ).ask
+  else
+    puts "Best Google Scholar result:\n  " + query_result
 
-  # Extract and format authors.
-  authors = result.scan(/%A (.*),/).map(&:first).map { |a| I18n.transliterate a }
-  safe_authors = authors.uniq.join('_').upcase.gsub(/\s+/, '_')
+    # Extract and format title.
+    title = I18n.transliterate result.scan(/%T (.*)/).first.first
+    safe_title = title.downcase.gsub(/[^A-Za-z0-9 ]/, ' ').strip.gsub(/\s+/, '_')
 
-  # Format new filename.
-  puts safe_authors
-  puts safe_title
-  safe_filename = "#{safe_title}_#{safe_authors}.pdf"
-  puts "New filename:\n  " + safe_filename
+    # Extract and format authors.
+    authors = result.scan(/%A (.*),/).map(&:first).map { |a| I18n.transliterate a }
+    safe_authors = authors.uniq.join('_').upcase.gsub(/\s+/, '_')
 
-  # Ask wheter to rename file.
-  confirm = ask("Rename the article? [Y/N] ") do |yn|
-    yn.limit = 1
-    yn.validate = /[yn]/i
+    # Format new filename.
+    puts safe_authors
+    puts safe_title
+    safe_filename = "#{safe_title}_#{safe_authors}.pdf"
+    puts "Proposed filename:\n  " + safe_filename
+
+    # Ask wheter to rename file.
+    should_rename_file = BoolPrompt.new(
+      question: "Wanna rename the file? ".blue,
+      lead: 'y'
+    ).ask
   end
 
+  unless should_rename_file
+    puts 'Ok bub. Bye!'.green
+    exit
+  end
+
+  new_filename = Prompt.new(
+    question: 'Confirm new filename: '.blue,
+    lead: safe_filename || search_string,
+    regexp: //
+  ).ask
+
+  exit
+
   # Conditionally rename file.
-  if confirm.downcase == 'y'
+  if should_rename_file
     dirname = File.dirname filename
     FileUtils.mkdir_p File.join(dirname, 'dubbed')
-    File.rename filename, File.join(dirname, 'dubbed', safe_filename)
+    File.rename filename, File.join(dirname, 'dubbed', new_filename)
     puts 'Done!'
   else
     puts 'Ok, bub.'

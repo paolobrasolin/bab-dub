@@ -18,6 +18,8 @@ I18n.config.available_locales = :en
 require './prompt'
 require './extract'
 
+require 'tempfile'
+
 def apply_range_list(ranges:, iterable:)
   selection = []
   ranges.each do |range|
@@ -147,6 +149,20 @@ begin
       question: "Wanna rename the file manually? ".blue,
       lead: 'n'
     ).ask
+
+    if should_rename_file
+      tmp_file = Tempfile.new('bab-dub-')
+      begin
+        tmp_file.write search_string
+        tmp_file.flush
+        system "vi #{tmp_file.path}"
+        tmp_file.rewind
+        safe_filename = tmp_file.read.strip
+      ensure
+        tmp_file.close
+        tmp_file.unlink
+      end
+    end
   else
     puts "Best Google Scholar result:\n  " + query_result
 
@@ -182,7 +198,7 @@ begin
     regexp: //
   ).ask
 
-  exit
+  # exit
 
   # Conditionally rename file.
   if should_rename_file

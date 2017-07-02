@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'progress_bar'
-gem 'pdf-reader'
+# prompt.rb
 gem 'colorize'
+
+gem 'progress_bar'
+
+gem 'pdf-reader'
 gem 'i18n'

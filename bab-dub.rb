@@ -57,7 +57,7 @@ def select_lines(
   apply_range_list(ranges: ranges, iterable: lines)
 end
 
-
+# This will be obsolete
 def check_filename(filename)
   # Get filename and check existence.
   raise 'I need a filename, bub.' if filename.nil?
@@ -71,154 +71,97 @@ def check_filename(filename)
   filepath
 end
 
+
+
+
+
+require_relative 'lib/job.rb'
+
+
 begin
+
   filename = check_filename ARGV[0]
 
-  extraction_ranges = BabDub::QualifiedRangePrompt.new(
-    question: "Input extraction ranges: ".blue,
-    lead: '0[0..9]'
-  ).ask
+  job = BabDub::Job.new filename
+  job.run
 
-  page_set = []
-  extraction_ranges.each { |s| page_set.concat s[:pages].to_a }
-  page_set.sort!.uniq!
 
-  content = extract_txt filename: filename, pageset: page_set
 
-  content_is_empty = content.join.gsub(/[[:space:]]/, '').empty?
+  # header = q_lines.join
 
-  if content_is_empty
-    puts "No text found!".red
-    should_try_ocr = BabDub::BoolPrompt.new(
-      question: "This might be a scan. Should I try with OCR? ".blue,
-      lead: 'y'
-    ).ask
-  else
-    puts "Text extracted!".green
-  end
+  # # Prepare search string from matched header.
+  # search_string = header.gsub(/\s+/, ' ').strip
+  # search_string = I18n.transliterate search_string
+  # search_string = BabDub::Prompt.new(
+  #   question: 'Confirm search string: '.blue,
+  #   lead: search_string,
+  #   regexp: //
+  # ).ask
 
-  if should_try_ocr
-    content = extract_ocr filename: filename, pageset: page_set
-    content_is_empty = content.join.gsub(/[[:space:]]/, '').empty?
-    raise "Still no text found! Aborting the mission.".red if content_is_empty
-    puts "Text extracted!".green
-  else
-    puts "Ok bub. Bye!".green
-    exit
-  end
+  # # Use scholar.py to fetch the best (first) match.
+  # result, stderr, status = Open3.capture3(
+  #   'python2.7',
+  #   'scholar.py/scholar.py',
+  #   '--citation=en',
+  #   '-c 1',
+  #   "--all=\"#{search_string}\""
+  # )
+  # raise stderr unless status.success?
+  # query_result = result.strip
 
-  # At this point either we have aborted or we have content.
+  # if query_result.empty?
+  #   puts "No result!".red
+  #   should_rename_file = BabDub::BoolPrompt.new(
+  #     question: "Wanna rename the file manually? ".blue,
+  #     lead: 'n'
+  #   ).ask
 
-  lines = []
-  extraction_ranges.each do |spec|
-    content[spec[:pages]].each do |page|
-      lines.concat page.lines[spec[:lines]]
-    end
-  end
+  #   if should_rename_file
+  #     tmp_file = Tempfile.new('bab-dub-')
+  #     begin
+  #       tmp_file.write search_string
+  #       tmp_file.flush
+  #       system "vi #{tmp_file.path}"
+  #       tmp_file.rewind
+  #       safe_filename = tmp_file.read.strip
+  #     ensure
+  #       tmp_file.close
+  #       tmp_file.unlink
+  #     end
+  #   end
+  # else
+  #   puts "Best Google Scholar result:\n  " + query_result
 
-  lines.each_with_index do |line, index|
-    line_number = index.to_s.rjust((lines.length-1).to_s.length)
-    puts "#{line_number}: ".green + line.rstrip.blue
-  end
+  #   # Extract and format title.
+  #   title = I18n.transliterate result.scan(/%T (.*)/).first.first
+  #   safe_title = title.downcase.gsub(/[^A-Za-z0-9 ]/, ' ').strip.gsub(/\s+/, '_')
 
-  lines_ranges = BabDub::UnqualifiedRangePrompt.new(
-    question: "Input lines, bub: ".blue,
-    lead: '0..1'
-  ).ask
+  #   # Extract and format authors.
+  #   authors = result.scan(/%A (.*),/).map(&:first).map { |a| I18n.transliterate a }
+  #   safe_authors = authors.uniq.join('_').upcase.gsub(/\s+/, '_')
 
-  q_lines = []
-  lines_ranges.each do |range|
-    q_lines << lines[range]
-  end
+  #   # Format new filename.
+  #   puts safe_authors
+  #   puts safe_title
+  #   safe_filename = "#{safe_title}_#{safe_authors}.pdf"
+  #   puts "Proposed filename:\n  " + safe_filename
 
-  header = q_lines.join
+  #   # Ask wheter to rename file.
+  #   should_rename_file = BabDub::BoolPrompt.new(
+  #     question: "Wanna rename the file? ".blue,
+  #     lead: 'y'
+  #   ).ask
+  # end
 
-  # Prepare search string from matched header.
-  search_string = header.gsub(/\s+/, ' ').strip
-  search_string = I18n.transliterate search_string
-  search_string = BabDub::Prompt.new(
-    question: 'Confirm search string: '.blue,
-    lead: search_string,
-    regexp: //
-  ).ask
-
-  # Use scholar.py to fetch the best (first) match.
-  result, stderr, status = Open3.capture3(
-    'python2.7',
-    'scholar.py/scholar.py',
-    '--citation=en',
-    '-c 1',
-    "--all=\"#{search_string}\""
-  )
-  raise stderr unless status.success?
-  query_result = result.strip
-
-  if query_result.empty?
-    puts "No result!".red
-    should_rename_file = BabDub::BoolPrompt.new(
-      question: "Wanna rename the file manually? ".blue,
-      lead: 'n'
-    ).ask
-
-    if should_rename_file
-      tmp_file = Tempfile.new('bab-dub-')
-      begin
-        tmp_file.write search_string
-        tmp_file.flush
-        system "vi #{tmp_file.path}"
-        tmp_file.rewind
-        safe_filename = tmp_file.read.strip
-      ensure
-        tmp_file.close
-        tmp_file.unlink
-      end
-    end
-  else
-    puts "Best Google Scholar result:\n  " + query_result
-
-    # Extract and format title.
-    title = I18n.transliterate result.scan(/%T (.*)/).first.first
-    safe_title = title.downcase.gsub(/[^A-Za-z0-9 ]/, ' ').strip.gsub(/\s+/, '_')
-
-    # Extract and format authors.
-    authors = result.scan(/%A (.*),/).map(&:first).map { |a| I18n.transliterate a }
-    safe_authors = authors.uniq.join('_').upcase.gsub(/\s+/, '_')
-
-    # Format new filename.
-    puts safe_authors
-    puts safe_title
-    safe_filename = "#{safe_title}_#{safe_authors}.pdf"
-    puts "Proposed filename:\n  " + safe_filename
-
-    # Ask wheter to rename file.
-    should_rename_file = BabDub::BoolPrompt.new(
-      question: "Wanna rename the file? ".blue,
-      lead: 'y'
-    ).ask
-  end
-
-  unless should_rename_file
-    puts 'Ok bub. Bye!'.green
-    exit
-  end
-
-  new_filename = BabDub::Prompt.new(
-    question: 'Confirm new filename: '.blue,
-    lead: safe_filename || search_string,
-    regexp: //
-  ).ask
-
-  # exit
-
-  # Conditionally rename file.
-  if should_rename_file
-    dirname = File.dirname filename
-    FileUtils.mkdir_p File.join(dirname, 'dubbed')
-    File.rename filename, File.join(dirname, 'dubbed', new_filename)
-    puts 'Done!'
-  else
-    puts 'Ok, bub.'
-  end
+  # # Conditionally rename file.
+  # if should_rename_file
+  #   dirname = File.dirname filename
+  #   FileUtils.mkdir_p File.join(dirname, 'dubbed')
+  #   File.rename filename, File.join(dirname, 'dubbed', new_filename)
+  #   puts 'Done!'
+  # else
+  #   puts 'Ok, bub.'
+  # end
 rescue StandardError => error
   # If there's any error just drop the gun.
   puts error.to_s.red

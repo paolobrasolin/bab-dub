@@ -18,13 +18,13 @@ module BabDub
     private
 
     OptionParser = OptionParser.new do |opt|
-      opt.banner = "Usage: bab-dub [OPTIONS] FILES"
+      opt.banner = "Usage: ruby #{$0} [OPTIONS] FILES"
       opt.separator  ""
       opt.separator  "Options"
 
-      opt.on "-n", "--name=FORMAT", "name format for file renaming (default: %title_%AUTHORS.%extension)" do |name_format|
-        @@options[:name_format] = name_format
-      end
+      # opt.on "-n", "--name=FORMAT", "name format for file renaming (default: %title_%AUTHORS.%extension)" do |name_format|
+      #   @@options[:name_format] = name_format
+      # end
 
       opt.on "-o", "--output-to=PATH", "renamed files folder (default: null, renames in place)" do |output_folder|
         @@options[:output_folder] = File.realpath output_folder
@@ -38,12 +38,12 @@ module BabDub
         @@options[:dry_run] = true
       end
 
-      opt.on "-v", "--verbose", "show verbose (debug) output" do
-        @@options[:verbose] = true
-      end
+      # opt.on "-v", "--verbose", "show verbose (debug) output" do
+      #   @@options[:verbose] = true
+      # end
 
       opt.on "-h", "--help", "help" do
-        puts option_parser
+        puts OptionParser
       end
     end
 

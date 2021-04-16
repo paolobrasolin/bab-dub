@@ -1,0 +1,2282 @@
+Identity
+Author(s): P. T. Geach
+Source: The Review of Metaphysics, Vol. 21, No. 1 (Sep., 1967), pp. 3-12
+Published by: Philosophy Education Society Inc.
+Stable URL: http://www.jstor.org/stable/20124493
+Accessed: 02-11-2015 06:38 UTC
+
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at http://www.jstor.org/page/
+info/about/policies/terms.jsp
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of content
+in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms of scholarship.
+For more information about JSTOR, please contact support@jstor.org.
+
+Philosophy Education Society Inc. is collaborating with JSTOR to digitize, preserve and extend access to The Review of
+Metaphysics.
+
+http://www.jstor.org
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+ARTICLES
+
+IDENTITY
+P. T. GEACH
+
+one
+When
+for the thesis that identity
+is relative.
+JLam arguing
+an
+I
+"x
+is
+with
+is
+identical
+hold,
+expres
+says
+y," this,
+incomplete
+it is short for "x is the same A as y" where
+"A" represents
+sion;
+some count noun understood
+from the context
+of utterance?or
+it is just a vague expression
+of a half-formed
+thought.
+Frege
+an
+"x
+that
+is
+one"
+is
+"x is
+emphasized
+incomplete way of saying
+one A, a single A," or else has no clear sense;
+since the connection
+one and identity comes out just as much
+of the concepts
+in the
+as
+in the English
+"one and the same,"
+German
+"ein und dasselbe'
+else,
+
+it has always surprised me that Frege did not similarly maintain
+I have just briefly
+the parallel doctrine of relativized
+identity, which
+stated.
+all vigor
+On the contrary, Frege actually enunciated with
+a doctrine that identity cannot be relativized:
+a
+is
+relation
+"Identity
+us
+a
+to
+in
+such
+form
+that
+it
+is
+inconceivable
+that
+given
+specific
+various
+
+forms
+
+of it should
+
+occur"
+
+Vol. II, p. 254).
+(Grundgesetze,
+to
+be
+in the
+identity
+sight
+presupposed
+branch of formal logic called identity
+Classical
+theory.
+identity
+a single schema to ordinary
+theory may be obtained by adjoining
+:
+quantification
+theory (for bound name-variables)
+=
+[-Fa ++ Vx(FxAx
+a). (1)
+Absolute
+
+seems
+
+at first
+
+and its Logic
+in his Set Theory
+to Hao Wang
+attributes
+serve
+as
+a
+the
+that
+will
+axiom
+13)
+(1)
+recognition
+(p.
+single
+In the vernacular we may
+schema for identity theory.
+intuitively
+is true of some
+express the content of (1) by saying: Whatever
+thing identical with an object a is true of a, and conversely.
+We readily derive from schema
+(1) the Law of Self-Identity,
+"
+h a = a."
+For if we take "FC" to be "?^a," then schema (1) gives
+
+Quine
+
+us:
+
+which
+
+of course
+
+=
+<- V x(x^aAx
+\-(a^a)
+a) , (2)
+"
+=
+are
+ha
+a." And there
+yields
+equally
+
+easy proofs
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+4
+
+P. T. GEACH
+
+of what
+
+has been called
+
+(I believe
+
+the Indiscernibility
+
+by Quine)
+
+of
+
+Identicals:
+\-FbAb
+
+=
+
+a
+
+<- Fa
+
+(3)
+
+and of theorems
+tity as a relation.
+to classical
+
+the symmetry
+and transitiveness
+of iden
+asserting
+The logical system got by adjoining
+schema
+(1)
+theory is a system with a complete proof
+quantification
+
+moreover,
+procedure;
+sense:
+If we
+lowing
+
+its interpretation
+try to introduce
+
+is categorical,
+
+in the fol
+
+two
+
+predicables,
+two-place
+to schema
+(1), they turn out to coin
+separately conforming
+cide in application.
+and
+(In this paper, as in my book Reference
+as
+use
+a
+I
+term
+for
+the
+verbal
+Generality,
+"predicables"
+expressions
+I reserve
+called "predicates"
+the term "pred
+by other logicians;
+each
+
+icate" for a predicable
+in a given proposition.)
+
+actually
+
+used
+
+being
+
+as the main
+
+functor
+
+In face of these well-known
+it may seem an enterprise
+results,
+a
+to
+of
+the classical
+circle-squarer
+challenge
+worthy
+theory of iden
+an
+as
+All
+the same, it has
+Achilles'
+I hope to show.
+I
+heel,
+tity.
+a theory
+must
+first introduce the notion of a I-predicable.
+Consider
+are we to take as the substitution
+terms. What
+interpreted
+of the "F" used in stating
+schema
+It will not be
+(1)?
+to
+"F"
+allow
+of
+enough
+by one-place
+predicables
+replacement
+a three
+in T. For suppose "Gfrfc" represents
+actually constructible
+can
+we
+that
+be
+constructed
+in
+if
+then
+consider
+T;
+place predicable
+the results of filling up all but one empty place in such a predicable
+T with
+
+instances
+
+with
+closure
+
+e.g.,
+name-variables,
+of the formula:
+Gvaw
+
+to count
+
+"Gvaw,"
+?-? Vx(Gv
+
+we
+
+shall
+
+xw Ax = a)
+
+certainly
+
+want
+
+the
+
+(4)
+
+as holding
+
+for other
+(1).
+good by schema
+Similarly
+of T. We
+shall say that a two-place
+many-place
+predicables
+pred
+in T if it satisfies schema
+icable in a theory T is an I-predicable
+(1)
+for all constructible
+of T?the
+formulas
+just described
+expressions
+being here counted as instances of schema
+(1).
+A two-place predicable
+is an I-predicable,
+not absolutely,
+but in
+to a given theory T. But so far this is no ground whatever
+the relativity
+for asserting
+of identity;
+for this so far amounts
+to
+no more
+an expression
+than the fact that what
+is relative
+signifies
+relation
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+IDENTITY
+
+5
+
+For all that I have said so far, it
+to the language we are using.
+a
+true
+if
+be
+that
+is an I-predicable
+in a theory T,
+might
+predicable
+it expresses
+then what
+in that theory is strict, absolute, unqualified
+identity.
+we see that an I-predicable
+ifwe consider amoment,
+However,
+a
+T
+not
+in
+need
+express strict, absolute,
+given theory
+unqualified
+mean
+are
+no
+more
+it
+need
+that
+two
+than
+indiscern
+identity;
+objects
+resources
+that form the descriptive
+of the
+to
+of
+the
+borrow
+Quine's handy term.
+theory,
+ideology
+theory?the
+we
+to
+wish
+"For real identity,
+may
+say, "we need not
+though,"
+a
+in
+definite
+the
+of
+For real identity,
+T.
+bring
+theory
+ideology
+a
+is true of something
+identical with
+is true of a and
+whatever
+of which
+in;
+regardless
+conversely,
+theory this can be expressed
+ible by the predicables
+
+a two-place
+predicable
+no matter
+what
+I-predicable
+
+real identity must
+be an
+signifying
+occur along with
+other predicables
+to talk this way, we shall soon
+if we wish
+
+and
+
+it in the theory."
+But
+such unrestrained
+fall into contradictions;
+about "what
+language
+ever is true of a," not made
+relative to the definite
+of a
+ideology
+as
+land us in such notorious
+paradoxes
+Grelling's
+theory T, will
+we restrict ourselves
+to the ideology
+and Richard's.
+If, however,
+of a theory T, then, as I said, an I-predicable need not express strict
+within
+the ideology of T.
+identity, but only indiscernibility
+are
+Nor is this all. Objects
+that
+indiscernible
+when we are
+to the ideology of T may perfectly well be discernible
+confined
+in
+the ideology of a theory T1 of which T is a fragment,
+T1
+that
+given
+contains more predicables
+than T.
+Of course this means
+that a
+an
+no
+an
+T
+that
+of
+is
+in
+T
+is
+predicable
+I-predicable
+longer
+I-pred
+icable with
+about this,
+regard to T1; there is no logical difficulty
+since the allowable
+for the schematic
+substitutions
+letter "F" in
+schema (1) will no longer be the same in T1 as
+were
+in T.
+they
+This
+is
+abstract
+illustrated
+argument
+readily
+by a simple
+Let the theory T be a theory about the expressions
+of a
+example.
+let
+the
+of
+T's
+be
+token
+given natural
+range
+language;
+quantifiers
+of that language;
+but let the ideology
+of T be so
+expressions
+in T we cannot give different descriptions
+for two
+same type-word.
+Then
+if a predicable
+of T, say
+in
+"I; is equiform with r?" it will be an I-predicable
+"Ely" signifies
+now let us add to T's
+But
+T.
+theory
+just one predicable
+ideology
+
+restricted
+tokens
+
+that
+
+of the
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+6
+
+P. T. GEACH
+
+that discriminates
+between
+tokens ; in the enlarged
+equiform
+theory
+we
+can
+true of a token a but not true
+is
+that
+T1,
+express something
+of an equiform
+token b; so in T1 the predicable
+"Ely" is not an
+any longer.
+
+I-predicable
+
+But now where
+
+have we
+
+got
+
+to?
+
+as though satisfac
+and sufficient condition
+for
+
+It looked
+
+tion of schema
+(1) gave us a necessary
+a predicable
+'s expressing
+strict identity.
+But the naive reading of
+we
+schema
+which
+should
+of
+(1), by
+speak quite unrestrictedly
+"whatever
+is true of so-and-so,"
+is inadmissible
+because
+of the
+a predicable
+semantic
+If instead we consider
+that is
+paradoxes.
+an I-predicable
+relative to a theory T, then this need only express
+relative to the ideology of T, and need not express
+indiscernibility
+an I-predicable
+strict unqualified
+of T, while
+Moreover,
+identity.
+same
+one
+and
+the
+may be no
+remaining
+unambiguous
+predicable,
+a
+an
+as a proper
+T1
+in
+T
+wider
+longer
+containing
+I-predicable
+theory
+but we certainly
+cannot
+say that this predicable,
+part;
+although
+it does not change
+T is expanded
+to T\ expresses
+its sense when
+in T but no longer does so in T1. We
+strict unqualified
+identity
+we
+a
+had
+for a predicable's
+criterion
+strict
+thought
+expressing
+and no
+thing has come apart in our hands;
+criterion
+that could replace this one has thus
+rigorous
+I urged
+far been suggested.
+that
+grounds
+initially on intuitive
+as unqualified
+now
+it
+there just is no such notion
+looks
+identity;
+as though my intuition was reliable.
+Imight
+say: the prosecution
+identity;
+alternative
+
+but
+
+the
+
+rests.
+
+can supply a strong argument
+for the defense
+Quine, however,
+we interpret
+is this: Whether
+of strict identity.
+His starting-point
+a
+as
+a two-place
+T
+in
+theory
+identity goes
+predicable
+expressing
+the quantifiers
+in T. His point
+the way we interpret
+along with
+see this from the theoretical
+is certainly well taken; we may
+pos
+so as
+the usual reading of nested quantifiers
+sibility of modifying
+the use of a special
+to avoid altogether
+device
+sign?a
+identity
+out in the Tractatus,
+in recent
+and further developed
+sketched
+So we may,
+and indeed should,
+consider
+articles by Hintikka.
+like two cog
+theory and identity
+theory as being
+quantification
+move
+mesh
+that
+and
+wheels
+together
+together.
+now
+an I-predicable
+we
+that
+if
+find
+in a theory
+Quine
+proposes
+T, we
+
+should
+
+construe
+
+the range
+
+of the quantifiers
+
+in T as a class of
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+7
+
+IDENTITY
+
+the I-predicable
+absolute
+and
+expresses
+objects for which
+identity,
+construe
+the other predicables
+In a wider
+of T correspondingly.
+turn
+system T1 the range of the quantifiers may on this principle
+out to be different;
+each complete
+sentence of
+and then, although
+as
+T will survive unchanged
+in T1 with
+the same truth-conditions
+before,
+definite
+
+the parts
+ways.
+
+will
+
+need
+
+reconstruing
+
+can grasp Quine 's proposal
+better if we
+Let us consider
+the letters and words
+
+We
+
+example.
+volume on my
+avoid problems
+
+bookshelves
+
+in a book
+
+words
+
+of each sentence
+
+take
+
+in certain
+
+a concrete
+
+in a particular
+(This example enables us to
+the letters and
+surviving
+change;
+
+at Leeds.
+
+about
+
+identity's
+are not changeless
+
+but for present pur
+entities,
+be
+that
+poses the changes
+may
+undergo
+ignored.)
+they
+Suppose
+the quantifiers
+of a theory T range over these letters and words,
+and that the ideology
+two
+of T does not discriminate
+between
+are
+same
+that
+token-words
+instances of the
+Let "Ely"
+type-word.
+be an I-predicable
+for the theory T.
+choice between
+two interpretations:
+
+Then at first sight we have a
+we may
+treat the quantifiers
+over the token letters and words
+of T as ranging
+in my book and
+read "Exy" as meaning
+"x is a token equiform with y" ; or on the
+as ranging over the type
+other hand we may treat the quantifiers
+letters
+
+and
+
+type-words
+"x is identical
+
+simply
+have us
+Quine would
+strue other predicables
+occurrences
+two
+tains
+"?contains
+
+two
+
+in my book,
+and read "Exy" as meaning
+as
+with
+absolute
+identity.
+y,"
+expressing
+and con
+this
+second interpretation,
+accept
+"? con
+For example,
+of T accordingly.
+of V"
+
+letter Vs"?for
+
+would
+if we
+
+not
+follow
+
+as
+construed
+we
+are
+not
+Quine,
+be
+
+will rather
+in T to quantify over token letters like this?but
+"? con
+as
+be construed
+(in the style of his Mathematical
+Logic)
+'e'."
+tains two initial segments
+the letter
+(I here
+ending with
+allowed
+
+on the unholy mixture
+a comment
+of
+to interject
+allow myself
+we
+a
+sentence
+in
+of talking that
+Nominalist
+and Realist ways
+get
+two Vs."
+like "The word
+Of course we know
+'teeth' contains
+someone
+is
+is intended,
+says "A donkey
+just as we do when
+the
+about
+is an animal beginning
+'d' "; but as Aquinas
+with
+says
+more dubious
+texts of the Fathers,
+such remarks are to be charit
+and on no account imitated. )
+ably construed
+what
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+P. T. GEACH
+
+8
+
+of T a pred
+Let us now suppose that we add to the vocabulary
+tokens
+different
+between
+icable or two enabling us to discriminate
+each
+full
+In the enlarged
+of the same word or letter.
+T1,
+system
+as
+same
+it
+the
+truth-conditions
+sentence of T will occur with
+just
+in sentences
+in T; but the import of subordinate
+expressions
+now
+The
+will
+be radically
+range over
+changed.
+quantifiers
+a clause
+over
+not
+and
+of
+token-words
+my volume,
+type-words;
+now
+mean
+"x
+is identical with y" but only "x is a
+not
+"Exy" will
+"F"
+if the one-place predicable
+token equiform with y."
+Similarly,
+of 'e'," this will be spelled out
+means
+two occurrences
+"?contains
+had
+
+will
+
+as
+
+"?
+
+two
+
+contains
+
+token
+
+letter
+
+and
+
+Vs,"
+
+each of which
+tains two initial segments
+:
+now
+us
+the
+consider
+formula
+Let
+
+no
+
+longer
+
+ends with
+
+as
+
+"?
+
+con
+
+the letter V."
+
+V x V y (Fx A F y A1 Exy)
+two non
+volume
+be read as: "There are in Geach's
+x
+as
+as
+x
+two of
+that
+such
+is
+well
+and
+and
+identical type-words
+y
+y,
+as
+T1
+read
+the
+will
+be
+it
+with
+In
+letter V."
+end
+its initial segments
+In T this will
+
+"There
+
+are
+
+in
+
+Geach's
+
+volume
+
+two
+
+non-equiform
+
+x
+
+token-words
+
+If we think it
+two letter Vs."
+and y, and x as well as y contains
+out, the changes of import for the bits of the formula cancel out,
+remains unchanged.
+of the whole
+and the truth-condition
+As you might
+logical answer to
+expect, I have no knock-down
+a
+to
+out
+in
+is
+be
+straightforward
+Quine
+caught
+hardly going
+But I can show, I think, that this way of interpre
+logical mistake.
+a sin
+so as to get an absolute
+involves
+identity
+ting quantifiers
+enun
+intuitive methodological
+program,
+clearly
+against a highly
+himself
+ciated by Quine himself?and
+ought to be
+obviously Quine
+our
+as
+that
+is
+The
+worried
+this
+knowledge
+program
+objection.
+by
+our stock
+expand our ideology,
+expands we should unhesitatingly
+more
+about
+of predicables,
+but should be much
+wary
+altering our
+I now
+of our bound name-variables.
+the interpretation
+ontology,
+own clear statement.
+"But ontology
+is, pending
+quote Quine's
+be
+more
+what
+called
+hand
+than
+in
+may
+ideology
+revision,
+clearly
+. . . That the
+of admissible
+?the
+ontology
+predicates.
+question
+is required by the
+should be relatively
+revision,
+definite,
+pending
+for quan
+of
+mere presence
+in
+the
+of quantifiers
+science;
+language
+this:
+
+tifiers may
+
+be said to have
+
+been
+
+interpreted
+
+and understood
+
+only
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+9
+
+IDENTITY
+
+And that
+in so far as we have settled the range of their variables.
+should be forever subject to supplementation
+the fund of predicates
+that
+is implicit in a theorem of metamathematics
+; for it is known
+are
+are
+not the
+classes which
+for any theory, however
+rich, there
+of any of
+
+extensions
+1966,
+
+York,
+
+its sentences"
+
+of Paradox,
+
+(The Ways
+
+New
+
+p. 232).
+
+aim; but one that we cannot attain by Quine 's
+and construing
+strict identity into I-predicables
+device of reading
+a
+in a theory correspondingly.
+Let us consider
+other expressions
+are
+a
+certain
+whose
+range by Quine's
+assigned
+theory T,
+quantifiers
+T a number of
+if T is a rich theory, we may find within
+method:
+.
+.
+an
+in rela
+is
+each
+of
+which
+.,
+E\ E\ E3,
+I-predicable
+predicables
+An admirable
+
+tion
+
+to
+
+some
+
+of which
+view,
+T3,
+
+has
+
+E1 will
+. . .;
+
+corresponding
+
+T1,
+
+sub-theory
+
+T2,
+
+. . ., and
+
+T3,
+
+none
+
+On Quine's
+in T as any other.
+the same application
+E2
+in
+and
+in
+and F3 in
+strict
+T2,
+T1,
+express
+identity
+
+and
+
+the
+
+of
+
+quantifiers
+
+the
+
+theories
+
+accordingly
+case. WTe wanted
+
+reconstrued
+
+as having
+our ontology
+
+T1,
+
+T2,
+
+T3,
+
+. . ., must
+
+in each
+ranges
+fixed
+while
+to keep
+comparatively
+some
+now
+our
+tri
+vial
+shifts
+but
+in
+quite
+ideology ;
+allowing changes
+a
+some
+mere omission
+from
+of
+in ideology?the
+theory
+predicables
+to the realm
+to our ontology,
+?will
+result in quite large additions
+be
+
+different
+
+are supposed to range over.
+our quantifiers
+to
+I introduced
+Let us go back to the universe
+of discourse
+on
+a
+a
+shelves.
+in
+volume
+while
+words
+little
+my
+you
+given
+ago?the
+as John Austin
+these words:
+There are various ways of counting
+rare
+a
+and token
+in
+flash
+of
+remarked,
+perceptiveness,
+type-words
+are just two among many ways of counting words. We may,
+in this
+in a book;
+count the dictionary-entry
+words
+for example,
+mean
+one
+case "theism" meaning
+belief in just
+God and "theism"
+as two words;
+to
+tea
+will
+addiction
+count,
+although
+ing
+equiform,
+of religion
+but on the other hand in an article on the philosophy
+
+words
+
+and the possessive
+the plural
+"theisms,"
+"theism,"
+as
+will all count as
+in
+"theism's
+fundamental
+mistake,"
+"theism's,"
+a
+we
+one word.
+can
+Now
+find
+theory for each
+suitably restricted
+"? is the same token-word
+as?,"
+"?is a token
+of the predicables
+the
+
+singular
+
+equiform
+
+ever
+
+with
+
+so many
+
+the predicable
+
+?,"
+
+other
+will
+
+"?
+
+has
+
+the
+
+same
+
+dictionary
+
+so that
+
+predicables,
+be an I-predicable;
+
+entry
+
+as ?,"
+
+and
+
+in the appropriate
+theory
+for the predicable
+e.g.,
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+10
+"?
+
+P. T. GEACH
+the
+
+has
+
+same
+
+as ?"
+
+entry
+
+dictionary
+
+resources
+
+we
+
+need
+
+assume
+
+only
+
+that
+
+are
+
+too meagre
+to distinguish
+theory's
+descriptive
+same
+to
+two
+words
+which
+between
+the
+entry cor
+dictionary
+now
+we
+to follow Quine,
+choose
+If
+there will be in
+responds.
+rerum natura ever so many different domains of words,
+just in one
+the
+
+on my
+
+volume
+
+at Leeds.
+
+shelves
+
+This is only one illustration
+of the way that shifts of ideology
+in our ontology.
+lead to an indecent pullulation
+of entities
+Take
+As I remarked years ago when criticizing
+another example.
+Quine,
+that are true of men but do not
+there is a certain set of predicables
+two men of the same surname.
+between
+discriminate
+If the ideol
+to such predicables,
+the ontology
+ogy of a theory T is restricted
+of androids
+of T calls into being a universe
+science
+fiction fans
+(as
+men
+in
+this
+differ
+from
+two
+that
+who
+different
+respect,
+just
+say)
+ones cannot share the same surname.
+I call these androids surmen;
+is inmany ways very much
+like aman, e.g., he has brains
+and a heart in his breast and guts in his belly, for in
+two men of the same surname do not differ.
+these respects
+
+a surman
+in his
+
+skull
+
+now
+
+struc
+shows itself as a baroque Meinongian
+suits
+for
+desert
+'s
+Quine
+preference
+hardly
+expressed
+razor to cut through
+We
+this
+landscapes.
+surely need Ockham's
+to make
+and it is not too hard to see where
+the cut. We
+tangle;
+reject absolute identity, but admit as many as we need of two-place
+"
+"A is some
+of the form "? is the same A as?"
+where
+predicables
+count noun.
+The words
+in my book (say) will constitute
+just one
+but different criteria of relative identity,
+universe
+of discourse;
+all
+The universe
+
+ture, which
+
+applying
+different
+word
+
+with
+
+equal
+
+two-place
+"?
+
+as ?,"
+
+right within
+
+this universe,
+"?
+is
+e.g.,
+
+predicables,
+is the
+
+same
+
+type-word
+
+we
+
+be given by
+same token
+
+the
+"?
+
+as ?,"
+
+as ?."
+word
+tionary-entry
+a
+with
+different
+Leeds, or,
+
+will
+
+is the
+
+can count
+
+same
+
+dic
+
+the men
+
+in
+Similarly,
+surmen
+in
+the
+but
+Leeds
+result,
+Leeds;
+as well as men on that account.
+does not contain androids
+It is
+are
+we
+the
+two
+of
+in
+that
+inhabitants
+Leeds
+dif
+numbering
+just
+a
+it is just
+different predicable?now
+the predicable
+ferent ways;
+"?
+"?
+and now the predicable
+is the
+is the same man as ?,"
+?"
+"?
+man
+a
+same surman as
+is
+the
+with
+(and this means,
+simply,
+same
+
+surname
+
+criterion
+
+as ?,
+
+to keep
+
+who
+
+is also
+
+us from counting
+
+a
+
+man"),
+
+?that
+
+is
+
+serving
+
+the same one twice
+
+over.
+
+as
+
+our
+
+Our
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+11
+
+IDENTITY
+is now firmly under control;
+only our ideology
+ontology
+such
+cannot
+tell
+in
+advance
+to expand?we
+how many
+we
+are going
+to need.
+observe
+(We may
+predicables
+not
+contain
+such
+many
+may
+coinciding
+predicables
+theory
+not then all be I-predicables
+cation;
+though
+they will
+
+is liable
+identity
+that one
+
+in appli
+in the
+to an
+in principle
+
+not be any objection
+is inevitable
+that
+anyhow?on
+expandable
+ideology;
+we
+not
+because
+happen to live in a surprising
+grounds,
+just
+But
+
+theory.)
+
+there
+
+could
+
+logical
+world.
+
+an amende honorable
+to the shade of
+this paper with
+over
+the fundamental
+thesis of this
+For Locke got
+John Locke.
+he
+here as else
+used,
+paper pretty clearly in his Essay;
+admittedly
+is
+but
+it
+of
+the
+"ideas,"
+where,
+very easy to transpose
+jargon
+murky
+I end
+
+his
+
+sentences
+
+done.
+
+Locke's
+
+be rephrased
+is a man, we
+person
+
+as ?"
+
+as I have
+into a new key and talk about count nouns,
+of
+of
+the
+way
+personal
+identity may
+problem
+posing
+thus : Even if every man is a person and every person
+"? is the same
+still cannot infer that the predicable
+and
+
+"?
+
+is
+
+the
+
+same
+
+man
+
+as ?"
+
+coincide
+
+in
+
+applica
+
+needs for its support an elaborate
+this conclusion
+tion;
+argument
+not a little logical manipulation
+in
+in the philosophy
+of mind,
+for
+formal
+with
+would
+his
+Locke
+contempt
+logic
+identity theory.
+case the
+have been left unimpressed
+by a formal "proof" that in that
+his reason for
+just is the same person and conversely;
+been
+the "proof" would
+bad, but I
+lights have
+by my
+rejecting
+the
+I am not here saying whether
+is right.
+think the rejection
+same man
+and vice versa;
+all I am saying is
+is the same person,
+same man
+
+this to be settled easily,
+in not allowing
+that Locke was
+right
+even on the supposition
+that there are no impersonal men and no
+is a person"
+is
+On my own view "Every man
+nonhuman
+persons.
+or
+as something
+to "Every man
+tantamount
+is the same person
+for "Every person
+is a man"
+and similarly
+other";
+(Reference
+The bearing of this in mind may mitigate
+and Generality,
+p. 191).
+the paradox;
+for on this analysis
+or circular.
+becomes
+inconclusive
+
+the argument
+
+Locke would
+
+reject
+
+this clear, let us suppose that each Leeds man has
+To make
+one
+surname.
+is the same surman as
+Then each Leeds man
+just
+so
+the
+of
+is a
+each Leeds man
+"surman";
+himself,
+by
+explanation
+as him
+surman.
+since "? is the same man
+On the other hand,
+is true of any other man with
+the same
+self," if true of any man,
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+12
+
+P. T. GEACH
+
+surname
+
+as
+
+he,
+
+each
+
+Leeds
+
+surman
+
+is the
+
+same
+
+man
+
+as himself,
+
+i.e.,
+
+is a man.
+
+loc. cit., that it does not make
+sense to
+(I have argued,
+ask which man he is the same as.)
+But it does not follow that,
+"? is the same man as?"
+in the case supposed,
+the predicables
+and "? is the same surman as?"
+in Leeds be coincident
+would
+in application.
+Nor are there surmen as well
+as men
+in Leeds;
+"surmen"
+itants.
+
+and "men"
+Just
+
+simply give
+so it might
+be with
+
+two ways of counting
+the inhab
+as Locke
+"man" and "person,"
+
+held.
+To be sure, Locke also held that there was no special way an
+named by a proper name had to be self-identical.
+This
+be false if his other view is true;
+view must
+on
+for by keeping
+a
+mean
+we
+over
+over
+to
+refer
+and
+to
+the
+proper name,
+using
+again
+same "thing";
+but if this is not an intention
+to keep on referring
+to the same A, for some definite
+of "A" as a count
+interpretation
+individual
+
+is void for uncertainty,
+noun,
+then, as lawyers say, the intention
+to refer at all. Locke's
+and we have not managed
+error on this
+has
+been
+I
+not
+and
+do
+influential,
+point
+repent of my
+enormously
+of
+him
+in
+criticism
+for
+the
+I ought
+but
+in
+error;
+repeated
+print
+to
+added
+that
+have
+himself
+Locke
+shows
+the
+out
+the
+justice
+way
+fly
+of Locke's
+
+But then, Locke's Essay is like a mail-order
+fly-bottle.
+and
+suits you.
+To switch to a commu
+you buy what
+catalogue,
+the trouble is to make
+out which
+nication-theory
+metaphor,
+part
+is message
+
+and which
+
+is noise.
+University
+
+of Leeds.
+
+This content downloaded from 128.6.218.72 on Mon, 02 Nov 2015 06:38:05 UTC
+All use subject to JSTOR Terms and Conditions
+
+

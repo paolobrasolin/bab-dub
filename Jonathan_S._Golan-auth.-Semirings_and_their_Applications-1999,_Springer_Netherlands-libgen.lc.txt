@@ -1,0 +1,68 @@
+1.
+
+HEMIRINGS AND SEMIRINGS:
+
+DEFINITIONS AND EXAMPLES
+
+A semigroup (M , *) consist s of a nonempty set M on which an associative
+operat ion * is defined . If M is a semigroup in which there exists an element e
+satisfying m * e = m = e * m for all m EM , th en M is called a monoid having
+identity element e. This element can easily seen to be unique, and is usually
+denoted by 1M . Note that a semigroup (M , *) which is not a monoid can be
+canonically emb edd ed in a monoid M' = M U {e} where e is som e element not
+in M , and where th e operation * is exte nded to an operation on M' by defining
+e * m' = m' = m' * e for all m' EM' . An element m of M idempotent if and only
+if m * m
+m. A semigroup (M , *) is commutative if and only if m * m'
+m' * m
+for all m,m' E M .
+A monoid (M, *) is partially-ordered if and only if th ere exists a partial ord er
+relation ~ defined on M satisfying the condition that m ~ m' implies that m em" ~
+m' * mil and mil * m ~ mil * m' for all elements m , m' , and mil in M . Basic
+information on partially-ordered monoids can be found in [Fuchs, 1963].
+A hemiring [resp . semiring] is a nonempty set R on which operations of
+addit ion and multiplication have been defined such that the following conditions
+are satisfied :
+
+=
+
+(1)
+(2)
+(3)
+(4)
+
+=
+
+(R , +) is a commutative monoid with identity element 0;
+(R , ·) is a semigroup [resp. monoid with identity element 1R];
+Multiplication distributes over addition from either side;
+Or = 0 = rO for all r E R .
+
+As a rule, we will write 1 instead of 1R when th ere is no likelihood of confusion .
+Note that if 1 0 then r r1 rO 0 for each elem ent r of R and so R {O} . In
+order to avoid this trivial case, we will assume that all semirings under consideration
+are nontrivial, i.e. th at
+
+=
+
+(5) 1 i=
+
+= = =
+
+=
+
+o.
+
+Note that 0 is clearly th e only element of R satisfying (4) : if z is an element of R
+satisfying zr z r z for all r in R th en 0 Oz z . The corresponding condition
+for addi tion, namely th at 1 satisfies th e condit ion that 1 + r = r for all r E R, will
+be discussed later .
+
+= =
+
+J. S. Golan, Semirings and their Applications
+© Springer Science+Business Media Dordrecht 1999
+
+= =
+
+
